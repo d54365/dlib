@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "StaticList.h"
+#include "DynamicList.h"
 
 using namespace std;
 using namespace DLib;
 
 int main(int argc, char* argv)
 {
-	StaticList<int, 5> l;
+	DynamicList<int> l;
 	
 	for (int i = 0; i < l.capacity(); i++)
 	{

@@ -21,7 +21,10 @@ namespace DLib
 				this->m_length = 0;
 				this->m_capacity = capacity;
 			}
-			THROW_EXCEPTION(NoEnoughMemoryException, "No memory to create DynamicList object ...");
+			else
+			{
+				THROW_EXCEPTION(NoEnoughMemoryException, "No memory to create DynamicList object ...");
+			}
 		}
 
 		int capacity() const
