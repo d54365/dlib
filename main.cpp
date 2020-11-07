@@ -1,31 +1,34 @@
 #include <iostream>
 
-#include "StaticArray.h"
+#include "DynamicArray.h"
 
 using namespace std;
 using namespace DLib;
 
 int main(int argc, char* argv)
 {
-	StaticArray<int, 10> array;
-
-	for (int i = 0; i < array.length(); i++)
+	DynamicArray<int> s1(10);
+	for (int i = 0; i < s1.length(); i++)
 	{
-		array[i] = i * i;
+		s1[i] = i;
 	}
 
-	for (int i = 0; i < array.length(); i++)
+	for (int i = 0; i < s1.length(); i++)
 	{
-		cout << array[i] << endl;
+		cout << s1[i] << endl;
 	}
 
-	StaticArray<int, 10> array2;
-	array2 = array;
-	for (int i = 0; i < array2.length(); i++)
+	DynamicArray<int> s2(10);
+	s2 = s1;
+	for (int i = 0; i < s2.length(); i++)
 	{
-		cout << array2[i] << endl;
+		cout << s2[i] << endl;
 	}
-	array2[10] = 100;
+
+	s2.resize(20);
+	cout << s2.length() << endl;
+	s2[19] = 1000;
+	cout << s2[19] << endl;
 
 	return 0;
 }
