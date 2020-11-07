@@ -1,23 +1,31 @@
 #include <iostream>
 
-#include "DynamicList.h"
+#include "StaticArray.h"
 
 using namespace std;
 using namespace DLib;
 
 int main(int argc, char* argv)
 {
-	DynamicList<int> l;
-	
-	for (int i = 0; i < l.capacity(); i++)
+	StaticArray<int, 10> array;
+
+	for (int i = 0; i < array.length(); i++)
 	{
-		l.insert(0, i * i);
+		array[i] = i * i;
 	}
 
-	for (int i = 0; i < l.capacity(); i++)
+	for (int i = 0; i < array.length(); i++)
 	{
-		cout << l[i] << endl;
+		cout << array[i] << endl;
 	}
+
+	StaticArray<int, 10> array2;
+	array2 = array;
+	for (int i = 0; i < array2.length(); i++)
+	{
+		cout << array2[i] << endl;
+	}
+	array2[10] = 100;
 
 	return 0;
 }

@@ -9,8 +9,8 @@ namespace DLib
 	class List : public Object
 	{
 	protected:
-		List(const List&);
-		List& operator= (const List&);
+		List(const List&) {}
+		List& operator= (const List&) {}
 	public:
 		List() {}
 		virtual bool insert(const T& e) = 0;
